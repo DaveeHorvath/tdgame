@@ -1,0 +1,17 @@
+Simple Naming convention
+
+classnames:
+	every word starts uppercase
+
+functions:
+	start uppercase
+
+variables:
+	private, [Serialisedfield], Get and Set functions if needed camelCase, start with _ and lowercase
+
+enums interfaces into own file
+
+enum files start  with E
+interfaces start	with I
+
+One class per script
