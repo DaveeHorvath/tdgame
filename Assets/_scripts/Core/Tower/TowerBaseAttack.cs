@@ -10,6 +10,9 @@ public class TowerBaseAttack : TowerLogical
     private bool canAttack;
     private DamageTowerObject _damageTower;
 
+    /*
+     * exits if not the correct type of tower
+     */
     public override void Awake()
     {
         base.Awake();
@@ -19,6 +22,10 @@ public class TowerBaseAttack : TowerLogical
         canAttack = true;
     }
 
+    /*
+     * stops if cant pay resource
+     * otherwise tries to attack the square
+     */
     public override bool Action()
     {
         if (!base.Action())
@@ -28,6 +35,10 @@ public class TowerBaseAttack : TowerLogical
         return (true);
     }
 
+    /*
+     * function to override for all the attacks extra
+     * damages all squares by default in pattern
+     */
     public virtual void Attack()
     {
         foreach (KeyValuePair<Vector2, float> field in _damageTower.damageBonus)
@@ -35,6 +46,10 @@ public class TowerBaseAttack : TowerLogical
         StartCoroutine("startAttack");
     }
 
+    /*
+     * util func to see if attacks are even needed
+     * ToDo
+     */
     private bool IsEnemyInRange()
     {
         return true;
