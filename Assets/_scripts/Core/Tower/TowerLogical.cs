@@ -24,11 +24,12 @@ public class TowerLogical : MonoBehaviour
      * this gets looped over in each players update, so we can even have some sequencing
      * for each towertype override this action 
      */
-    public virtual void Action()
+    public virtual bool Action()
     {
         if (!canWork)
-            return;
+            return false;
         Debug.Log("Base action taken");
+        return true;
     }
 
     /*
@@ -36,7 +37,7 @@ public class TowerLogical : MonoBehaviour
      * if not disable canwork, stop takeCost
      * only restart on next Resourcegain event from player, maybe make it queueable
      */
-    IEnumerator takeCost()
+    IEnumerator TakeCost()
     {
         yield return new WaitForSeconds(10);
         Debug.Log("You have paid your taxes. Good job");

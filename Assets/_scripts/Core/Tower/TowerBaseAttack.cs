@@ -19,16 +19,18 @@ public class TowerBaseAttack : TowerLogical
         canAttack = true;
     }
 
-    public override void Action()
+    public override bool Action()
     {
-        base.Action();
+        if (!base.Action())
+            return false;
         if (canAttack && IsEnemyInRange())
             Attack();
+        return (true);
     }
 
     public virtual void Attack()
     {
-        foreach (KeyValuePair<Vector2,float> field in _damageTower.damageBonus)
+        foreach (KeyValuePair<Vector2, float> field in _damageTower.damageBonus)
             Debug.Log(field.Value.ToString() + " damage taken on " + field.Key.ToString());
         StartCoroutine("startAttack");
     }
@@ -38,7 +40,7 @@ public class TowerBaseAttack : TowerLogical
         return true;
     }
 
-    IEnumerator startAttack()
+    IEnumerator StartAttack()
     {
         canAttack = false;
         yield return new WaitForSeconds(_damageTower.reload);

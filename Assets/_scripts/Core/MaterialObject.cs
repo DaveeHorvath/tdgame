@@ -4,17 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaterialObject : MonoBehaviour
+public class MaterialObject : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("General")]
+    [SerializeField]
+    private string _name;
+    [SerializeField]
+    private string _description;
+    [Header("Visual")]
+    [SerializeField]
+    private Sprite _sprite;
 }
