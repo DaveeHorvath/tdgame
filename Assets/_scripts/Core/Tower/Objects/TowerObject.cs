@@ -13,6 +13,7 @@ public class TowerObject : ScriptableObject
     private string _name;
     [SerializeField]
     private string _description;
+    [SerializeField]
     private ETowerType _towertype = ETowerType.None;
     public ETowerType type => _towertype;
 

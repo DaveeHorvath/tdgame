@@ -9,10 +9,10 @@ public class MaterialObject : ScriptableObject
 {
     [Header("General")]
     [SerializeField]
-    private string _name;
+    public string _name;
     [SerializeField]
-    private string _description;
+    public string _description;
     [Header("Visual")]
     [SerializeField]
-    private Sprite _sprite;
+    public Sprite _sprite;
 }

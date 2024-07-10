@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: first
   _description: test1
+  _towertype: 2
   _damagetype: 0
   _attackdamage: 1
   _reloadtime: 1
-  _relativepoisitions: []
+  _relativepositions:
+  - topleft: {x: 2, y: 0, z: 0}
+    bottomright: {x: 0, y: 4, z: 0}
+    debug: 0
+  _damage:
+  - 5

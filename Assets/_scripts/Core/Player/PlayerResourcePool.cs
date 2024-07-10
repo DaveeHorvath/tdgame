@@ -5,15 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[DefaultExecutionOrder(-50)]
 public class PlayerResourcePool : MonoBehaviour
 {
     [Header("Resources")]
     public Dictionary<MaterialObject, float> _resources;
     public MaterialObject _material;
+    public static PlayerResourcePool instance { get; private set; }
 
     private void Start()
     {
+        instance = this;
         _resources = new Dictionary<MaterialObject, float>();
+        TryAddMaterial(_material, 69, out float k);
     }
 
     /*

@@ -6,6 +6,7 @@ using UnityEngine;
 [DefaultExecutionOrder(100)]
 public class Enemy : MonoBehaviour
 {
+    [Separator(2, 20)]
     public float moveSpeed;
     int current;
 

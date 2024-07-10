@@ -15,13 +15,9 @@ public class DamageTowerObject : TowerObject
     [SerializeField]
     private float _reloadtime;
     public float reload => _reloadtime;
-    private ETowerType _towertype = ETowerType.Damage;
 
     // todo fancy editor script at some point
     [Header("Pattern")]
-    [SerializeField]
-    private List<Vector2> _relativepoisitions;
-    [SerializeField]
-    private Dictionary<Vector2, float> _damagebonus;
-    public Dictionary<Vector2, float> damageBonus => _damagebonus;
+    public List<GridArea> _relativepositions;
+    public List<float> _damage;
 }
