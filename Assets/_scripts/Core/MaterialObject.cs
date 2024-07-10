@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "MaterialObject", menuName = "MaterialObject")]
 public class MaterialObject : ScriptableObject
 {
     [Header("General")]

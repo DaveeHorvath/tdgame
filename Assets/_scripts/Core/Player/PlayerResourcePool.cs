@@ -2,13 +2,19 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerResourcePool : MonoBehaviour
 {
     [Header("Resources")]
-    [SerializeField]
-    private Dictionary<MaterialObject, float> _resources;
+    public Dictionary<MaterialObject, float> _resources;
+    public MaterialObject _material;
+
+    private void Start()
+    {
+        _resources = new Dictionary<MaterialObject, float>();
+    }
 
     /*
      * checks if amount can be paid from material

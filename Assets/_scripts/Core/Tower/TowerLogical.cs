@@ -17,7 +17,7 @@ public class TowerLogical : MonoBehaviour
     {
         if (_tower == null)
             Debug.LogException(new System.Exception("Missing tower object reference"));
-        StartCoroutine("takeCost");
+        StartCoroutine("TakeCost");
     }
 
     /*
